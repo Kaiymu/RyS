@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Scene Manager\LevelManager.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Scene Manager\CleanScene.cs" Line="8" Column="34" />
+      <File FileName="Assets\Scripts\Scene Manager\GameManager.cs" Line="42" Column="14" />
+      <File FileName="Assets\Scripts\Scene Manager\LevelManager.cs" Line="29" Column="6" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
