@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: 76ae664284bd09442ab0e96ddc01494f
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: hero_0
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 746
+        width: 43
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: hero_1
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 747
+        width: 38
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: hero_2
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 751
+        width: 32
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: hero_3
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 744
+        width: 65
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: hero_4
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 507
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: hero_5
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 483
+        width: 72
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: hero_6
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 493
+        width: 54
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: hero_7
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 492
+        width: 43
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: hero_8
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 253
+        width: 75
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: hero_9
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 248
+        width: 72
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: hero_10
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 245
+        width: 54
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: hero_11
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 244
+        width: 43
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: hero_12
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1
+        width: 42
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: hero_13
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 3
+        width: 39
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: hero_14
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 4
+        width: 43
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: hero_15
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1
+        width: 43
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 

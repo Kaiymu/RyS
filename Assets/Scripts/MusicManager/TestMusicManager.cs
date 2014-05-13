@@ -3,7 +3,6 @@ using System.Collections;
 
 public class TestMusicManager : MonoBehaviour {
 
-	
     void OnGUI()
     {
         MusicManager.MusicInfo[] music = MusicManager.Instance.GetMusicList();
