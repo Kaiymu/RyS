@@ -11,13 +11,13 @@ Platform assembly: C:\Users\Thomas\Documents\Projets_unity\RyS\RyS_Data\Managed\
 Loading C:\Users\Thomas\Documents\Projets_unity\RyS\RyS_Data\Managed\UnityEngine.dll into Unity Child Domain
 Platform assembly: C:\Users\Thomas\Documents\Projets_unity\RyS\RyS_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Users\Thomas\Documents\Projets_unity\RyS\RyS_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.044 seconds
+- Completed reload, in  0.046 seconds
 desktop: 1920x1080 50Hz; virtual: 3600x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-UnloadTime: 0.197324 ms
+UnloadTime: 0.215882 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 202.
-Total: 0.387534 ms (FindLiveObjects: 0.007422 ms CreateObjectMapping: 0.005876 ms MarkObjects: 0.051341 ms  DeleteObjects: 0.003092 ms)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 193.
+Total: 0.775073 ms (FindLiveObjects: 0.009897 ms CreateObjectMapping: 0.006185 ms MarkObjects: 0.045774 ms  DeleteObjects: 0.004639 ms)
 

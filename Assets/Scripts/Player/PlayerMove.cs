@@ -1,39 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
-public class Runner : MonoBehaviour {
+public class PlayerMove : MonoBehaviour {
 
-	public static float distanceTraveled;
-	
+	private int posX = 0;
+	private float posY;
 	public float speed;
 	public Vector3 jumpVelocity;
 	public float fovDeduct;
 	public float speedDeduct;
 
+	private Vector3 newPosition;
+	
 
-	private float fov;
-	private bool  directionRight, directionLeft, directionNone;
+	private float fov = 35;
+	private bool  top, mid, down;
 	private bool touchingPlatform;
+	// Use this for initialization
 
-	void Start()
-	{
-		fov = Camera.main.fieldOfView;
+	void Awake () {
+		posY = transform.position.y;
+	}
+	void Start () {
+		top = true;
 	}
 	
+	// Update is called once per frame
 	void Update () {
-		Jump ();
+		posX++;
 		changeCameraFov();
-		distanceTraveled = transform.localPosition.x;
+		movePlayerHorizontal();
 	}
 
-	void Jump() {
-		if(touchingPlatform && Input.GetButtonDown("Jump")){
-			rigidbody.AddForce(jumpVelocity, ForceMode.VelocityChange);
-			touchingPlatform = false;
-		}
-	}
-	
 	void changeCameraFov()
 	{
 		if(Input.GetKey("d"))
@@ -42,12 +40,12 @@ public class Runner : MonoBehaviour {
 				fov += fovDeduct * Time.deltaTime;
 			else
 				fov = 45;
-
+			
 			if(speed < 75)
 				speed += speedDeduct * Time.deltaTime;
 			else
 				speed = 75;
-
+			
 		}
 		else if(Input.GetKey("q"))
 		{
@@ -55,7 +53,7 @@ public class Runner : MonoBehaviour {
 				fov -= fovDeduct * Time.deltaTime;
 			else 
 				fov = 25;
-
+			
 			if(speed > 25)
 				speed -= speedDeduct * Time.deltaTime;
 			else
@@ -70,7 +68,7 @@ public class Runner : MonoBehaviour {
 				if (fov <= 36)
 					fov += fovDeduct * Time.deltaTime;
 			}
-
+			
 			if(speed > 50)
 				speed -= speedDeduct * Time.deltaTime;
 			else if (fov < 50)
@@ -81,17 +79,19 @@ public class Runner : MonoBehaviour {
 		Camera.main.fieldOfView = fov;
 	}
 
-	void FixedUpdate () {
-		if(touchingPlatform){
-			rigidbody.AddForce(speed, 0f, 0f, ForceMode.Force);
+	void movePlayerHorizontal()
+	{
+		Vector3 positionA = new Vector3(posX, 3, 0);
+		Vector3 positionB = new Vector3(posX, -3, 0);
+		if(Input.GetKeyDown("z") && !top){
+			newPosition = positionA;
 		}
-	}
 
-	void OnCollisionEnter () {
-		touchingPlatform = true;
-	}
+		if(Input.GetKeyDown("s") && !down){
+			newPosition = positionB;
+		}
 
-	void OnCollisionExit () {
-		touchingPlatform = false;
+		transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * 2);
+	
 	}
 }
