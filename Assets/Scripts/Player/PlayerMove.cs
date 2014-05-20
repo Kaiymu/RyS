@@ -3,33 +3,31 @@ using System.Collections;
 
 public class PlayerMove : MonoBehaviour {
 
-	private int posX = 0;
+	private float posX = 0f;
 	private float posY;
+	private float fov = 35;
+
 	public float speed;
-	public Vector3 jumpVelocity;
 	public float fovDeduct;
 	public float speedDeduct;
+	public float speedMin, speedMax, speedMid;
+	public float speedDown;
 
-	private Vector3 newPosition;
-	
+	public float smooth = 2.0F;
+	public float tiltAroundX = 0;
+	public float tiltAngle = 30.0F;
 
-	private float fov = 35;
-	private bool  top, mid, down;
-	private bool touchingPlatform;
-	// Use this for initialization
+	private float AxisDown =-1f;
+	private float AxisTop  = 1f;
 
 	void Awake () {
 		posY = transform.position.y;
 	}
-	void Start () {
-		top = true;
-	}
 	
 	// Update is called once per frame
 	void Update () {
-		posX++;
 		changeCameraFov();
-		movePlayerHorizontal();
+		movePlayer();
 	}
 
 	void changeCameraFov()
@@ -41,10 +39,10 @@ public class PlayerMove : MonoBehaviour {
 			else
 				fov = 45;
 			
-			if(speed < 75)
+			if(speed < speedMax)
 				speed += speedDeduct * Time.deltaTime;
 			else
-				speed = 75;
+				speed = speedMax;
 			
 		}
 		else if(Input.GetKey("q"))
@@ -54,10 +52,10 @@ public class PlayerMove : MonoBehaviour {
 			else 
 				fov = 25;
 			
-			if(speed > 25)
+			if(speed > speedMin)
 				speed -= speedDeduct * Time.deltaTime;
 			else
-				speed = 25;
+				speed = speedMin;
 		}
 		else 
 		{
@@ -69,29 +67,35 @@ public class PlayerMove : MonoBehaviour {
 					fov += fovDeduct * Time.deltaTime;
 			}
 			
-			if(speed > 50)
+			if(speed > speedMid)
 				speed -= speedDeduct * Time.deltaTime;
-			else if (fov < 50)
+			else if (fov < speedMid)
 				speed += speedDeduct * Time.deltaTime;
 			else 
-				speed = 50;
+				speed = speedMid;
 		}
 		Camera.main.fieldOfView = fov;
 	}
 
-	void movePlayerHorizontal()
+	void movePlayer()
 	{
-		Vector3 positionA = new Vector3(posX, 3, 0);
-		Vector3 positionB = new Vector3(posX, -3, 0);
-		if(Input.GetKeyDown("z") && !top){
-			newPosition = positionA;
+		posX += speed;
+		if(Input.GetKey("z")){
+			tiltAroundX = AxisTop * tiltAngle;
+			posY = Mathf.Lerp(posY, posY + speedDown, Time.deltaTime);
 		}
 
-		if(Input.GetKeyDown("s") && !down){
-			newPosition = positionB;
+		else if(Input.GetKey("s")){
+			tiltAroundX = AxisDown * tiltAngle;
+			posY = Mathf.Lerp(posY, posY - speedDown, Time.deltaTime);
 		}
+		else
+			tiltAroundX = 0;
 
-		transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * 2);
-	
+		Quaternion target = Quaternion.Euler(tiltAroundX, 270, 0);
+		transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
+		transform.position = new Vector3(posX, posY, 0);
+		Camera.main.transform.position = new Vector3(transform.position.x + (-15.89729f), transform.position.y +1, transform.position.z);
 	}
+
 }
