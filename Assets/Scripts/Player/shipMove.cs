@@ -29,13 +29,13 @@ public class shipMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetButtonDown("verticalUp") && this.currentRail != 0 && this.movingDir != "TOP")
+		if (Input.GetButtonDown("verticalUp") && this.currentRail != 0 && this.movingDir == "")
 		{
 			this.objectiveRail -= 1;
 			this.objectiveValueY = railArray[this.objectiveRail];
 			this.movingDir = "TOP";
 		}
-		else if(Input.GetButtonDown("verticalDown") && this.currentRail != 2 && this.movingDir != "BOT")
+		else if(Input.GetButtonDown("verticalDown") && this.currentRail != 2 && this.movingDir == "")
 		{
 			this.objectiveRail += 1;
 			this.objectiveValueY = railArray[this.objectiveRail];
