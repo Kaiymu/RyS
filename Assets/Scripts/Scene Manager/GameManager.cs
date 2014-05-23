@@ -3,8 +3,6 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
-    
-
     public float runTime;
 
     private float currentTime = 0;
@@ -30,7 +28,7 @@ public class GameManager : MonoBehaviour {
     {
         instance = this;
         DontDestroyOnLoad(gameObject);
-        Application.LoadLevel("RyS");
+        Application.LoadLevel("test");
     }
 
 	void Update () 
