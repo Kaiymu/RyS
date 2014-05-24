@@ -15,8 +15,8 @@ public class ShipCollide : MonoBehaviour {
 	void OnTriggerEnter(Collider col) {
 		if(col.tag == "BlockSpawn")
 		{
+			col.GetComponent<EmitExplosion>().exploseMe();
 			_scoreGive.score += 1;
-			Destroy(col.gameObject);
 		}
 	}
 }

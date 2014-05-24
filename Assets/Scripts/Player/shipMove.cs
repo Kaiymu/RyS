@@ -21,21 +21,19 @@ public class shipMove : MonoBehaviour {
 		this.objectiveRail = 1;
 		this.currentRail = 1;
 		this.movingDir ="";
-
-
-
+	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetButtonDown("verticalUp") && this.currentRail != 0 && this.movingDir == "")
+		if (Input.GetButton("verticalUp") && this.currentRail != 0 && this.movingDir == "")
 		{
 			this.objectiveRail -= 1;
 			this.objectiveValueY = railArray[this.objectiveRail];
 			this.movingDir = "TOP";
 		}
-		else if(Input.GetButtonDown("verticalDown") && this.currentRail != 2 && this.movingDir == "")
+		else if(Input.GetButton("verticalDown") && this.currentRail != 2 && this.movingDir == "")
 		{
 			this.objectiveRail += 1;
 			this.objectiveValueY = railArray[this.objectiveRail];
