@@ -3,6 +3,9 @@ using System.Collections;
 
 public class TestMusicManager : MonoBehaviour {
 
+	public GameObject GUIbuttonTest;
+	private int _i = 0;
+
     void OnGUI()
     {
         MusicManager.MusicInfo[] music = MusicManager.Instance.GetMusicList();
@@ -19,8 +22,10 @@ public class TestMusicManager : MonoBehaviour {
         
         foreach (MusicManager.MusicInfo musicName in music)
         {
-            if (GUILayout.Button(musicName.name))
-                MusicManager.Instance.StartMusic(musicName.fullPath);
+			if (GUILayout.Button(musicName.name))
+	                MusicManager.Instance.StartMusic(musicName.fullPath);
+				_i++;
+
         }
     }
 }
