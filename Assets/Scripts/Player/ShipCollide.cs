@@ -6,6 +6,7 @@ public class ShipCollide : MonoBehaviour {
 	public GameObject ScoreManager;
 	private ScoreManager _scoreGive;
 
+	public ParticleSystem toot;
 
 	void Start()
 	{

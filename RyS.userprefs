@@ -1,15 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\EmitExplosion.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\DestroyColisions.cs">
     <Files>
-      <File FileName="Assets\EmitExplosion.cs" Line="27" Column="1" />
+      <File FileName="Assets\EmitExplosion.cs" Line="23" Column="53" />
       <File FileName="Assets\Scripts\Player\shipMove.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Scene Manager\GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Scene Manager\ScoreManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player\ShipCollide.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\ShipCollide.cs" Line="15" Column="1" />
       <File FileName="Assets\Lib\Detonator Explosion Framework\System\DetonatorBurstEmitter.cs" Line="1" Column="1" />
       <File FileName="Assets\Lib\Detonator Explosion Framework\System\Detonator.cs" Line="1" Column="1" />
-      <File FileName="Assets\EmitExplosion.cs" Line="23" Column="53" />
+      <File FileName="Assets\DestroyColisions.cs" Line="7" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

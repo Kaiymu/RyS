@@ -4,23 +4,21 @@ using System.Collections;
 public class EmitExplosion : MonoBehaviour {
 
 	public GameObject particlesDetonator;
-	private Detonator _test;
+	private Detonator _particlesDetonator;
 	private int _index;
 
 	void Awake()
 	{
-		//for(_index = 0; _index < particlesDetonator.Length - 1; _index++);
-		//{
-		//	_test[_index] = particlesDetonator[_index].GetComponent<Detonator>();
-		//}
-
-		_test = particlesDetonator.GetComponent<Detonator>();
+		_particlesDetonator = particlesDetonator.GetComponent<Detonator>();
 	}
 
 	public void exploseMe()
 	{
-		_test.Explode();
-		this.GetComponent<MeshRenderer>().enabled = false;
+		_particlesDetonator.Explode();
+		ParticleSystem[] allChildren = GetComponentsInChildren<ParticleSystem>();
+		foreach (ParticleSystem childParticles in allChildren) {
+			Destroy(childParticles);
+		}
 	}
 
 }
