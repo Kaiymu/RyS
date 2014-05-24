@@ -20,5 +20,7 @@ public class EmitExplosion : MonoBehaviour {
 	public void exploseMe()
 	{
 		_test.Explode();
+		this.GetComponent<MeshRenderer>().enabled = false;
 	}
+
 }
