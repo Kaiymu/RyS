@@ -5,6 +5,27 @@ using System.IO;
 public class MusicManager : MonoBehaviour {
 
 	private string path = Application.dataPath + "/../Music/";
+	private float posY;
+	private Object _boutonMusic;
+
+	void Start()
+	{
+		MusicManager.MusicInfo[] music = MusicManager.Instance.GetMusicList();
+
+		_boutonMusic = Resources.Load("Label");
+		foreach (MusicManager.MusicInfo musicName in music)
+		{	
+			//MusicManager.Instance.StartMusic(musicName.fullPath);
+			if(_boutonMusic != null)
+			{
+				posY -= 0.3f;
+				GameObject o = Instantiate(_boutonMusic, new Vector3(1.5f, posY, 0f), Quaternion.identity) as GameObject;
+				o.GetComponentInChildren<MusicPlay>().nameMusic = musicName.name;
+				o.GetComponentInChildren<MusicPlay>().namePath  = musicName.fullPath;
+			}
+			else return;
+		}
+	}
 
     public struct MusicInfo
     {
@@ -13,6 +34,7 @@ public class MusicManager : MonoBehaviour {
     }
 
     private static MusicManager mInstance;
+	private static MusicManager test;
     public static MusicManager Instance
     {
         get
@@ -26,7 +48,9 @@ public class MusicManager : MonoBehaviour {
                     GameObject o = new GameObject("MusicManager");
                     audioListener = o.AddComponent<AudioListener>();
                 }
-                mInstance = audioListener.gameObject.AddComponent<MusicManager>();
+				// Attache automatiquement le script. OH GOD
+               	 	mInstance = audioListener.gameObject.AddComponent<MusicManager>();
+
                 mInstance.mAudioSource = audioListener.gameObject.GetComponent<AudioSource>();
                 if (mInstance.mAudioSource == null)
                     mInstance.mAudioSource = audioListener.gameObject.AddComponent<AudioSource>();

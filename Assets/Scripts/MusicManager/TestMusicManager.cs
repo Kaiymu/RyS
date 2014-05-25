@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class TestMusicManager : MonoBehaviour {
-
-	public GameObject GUIbuttonTest;
+	
 	private int _i = 0;
 
     void OnGUI()
