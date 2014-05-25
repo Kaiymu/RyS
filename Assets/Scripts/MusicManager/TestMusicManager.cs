@@ -2,29 +2,21 @@
 using System.Collections;
 
 public class TestMusicManager : MonoBehaviour {
-	
-	private int _i = 0;
+
 
     void OnGUI()
     {
         MusicManager.MusicInfo[] music = MusicManager.Instance.GetMusicList();
         if (MusicManager.Instance.AudioSource.isPlaying)
         {
-            if (GUILayout.Button("Pause")) 
+            if (PauseGame.pause) 
                 MusicManager.Instance.AudioSource.Pause();
         }
         else if (MusicManager.Instance.AudioSource.clip!= null && MusicManager.Instance.AudioSource.clip.isReadyToPlay)
         {
-            if (GUILayout.Button("Play")) 
+			if (!PauseGame.pause) 
                 MusicManager.Instance.AudioSource.Play();
         }
         
-        foreach (MusicManager.MusicInfo musicName in music)
-        {
-			if (GUILayout.Button(musicName.name))
-	                MusicManager.Instance.StartMusic(musicName.fullPath);
-				_i++;
-
-        }
     }
 }

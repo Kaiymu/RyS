@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PauseGame : MonoBehaviour {
 	public static bool pause = false;
-
+		
 	// Use this for initialization
 	void Start () {
 	
@@ -13,11 +13,11 @@ public class PauseGame : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown("p")){
 			Time.timeScale = 0;
-			PauseGame.pause = true;
+			pause = true;
 		}
 		if(Input.GetKeyDown("v")){
 			Time.timeScale = 1;
-			PauseGame.pause = false;
+			pause = false;
 		}
 	}
 }

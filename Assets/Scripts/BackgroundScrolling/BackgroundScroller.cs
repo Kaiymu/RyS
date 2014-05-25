@@ -4,25 +4,20 @@ using System.Collections;
 public class BackgroundScroller : MonoBehaviour {
 
 	public float speed;
-	float pos = 0;
+	private float _pos = 0;
+	private bool _isPlaying = true;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
+	public delegate void ClickAction();
+		
 	// Update is called once per frame
 	void Update () {
 		if(!PauseGame.pause)
 		{
+			_pos += speed;
+			if(_pos > 1.0f)
+				_pos -= 1.0f;
 
-		pos += speed;
-		if(pos > 1.0f)
-			pos -= 1.0f;
-
-		renderer.material.mainTextureOffset = new Vector2(pos, 0);
+			renderer.material.mainTextureOffset = new Vector2(_pos, 0);
 		}
-		else
-			Debug.Log ("Game paused");
 	}
 }
