@@ -5,8 +5,7 @@ public class ShipCollide : MonoBehaviour {
 
 	public GameObject ScoreManager;
 	private ScoreManager _scoreGive;
-
-
+	
 	void Start()
 	{
 		_scoreGive = ScoreManager.GetComponent<ScoreManager>();

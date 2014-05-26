@@ -21,7 +21,6 @@ public class shipMove : MonoBehaviour {
 		this.objectiveRail = 1;
 		this.currentRail = 1;
 		this.movingDir ="";
-	
 	}
 	
 	// Update is called once per frame
