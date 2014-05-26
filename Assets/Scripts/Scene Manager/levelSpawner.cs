@@ -49,7 +49,6 @@ public class levelSpawner : MonoBehaviour {
 			bassCount = 0;
 			if(ActiveRailNum < 2)
 				ActiveRailNum += 1;
-
 			else{
 				ActiveRailNum = 0;
 				highLine.SetColors(usedRail,usedRail);
