@@ -11,8 +11,14 @@ public class levelSpawner : MonoBehaviour {
 	public GameObject midSpawnerPrefab;
 	public GameObject botSpawnerPrefab;
 
+	public static int obstacleCount;
+	public static int numObsBeforeCollect;
+
 	public float rangeBetweenRails;
 	public float halfScreenSize;
+
+	public Color unUsedRail;
+	public Color usedRail;
 	// Use this for initialization
 	void Start () {
 		Instantiate(this.midLinePrefab, new Vector3(0,0,0), this.transform.rotation);
@@ -23,10 +29,14 @@ public class levelSpawner : MonoBehaviour {
 		Instantiate(this.highSpawnerPrefab, new Vector3(halfScreenSize,rangeBetweenRails,0), this.transform.rotation);
 		Instantiate(this.botSpawnerPrefab, new Vector3(halfScreenSize,-rangeBetweenRails,0), this.transform.rotation);
 
+		obstacleCount = 0;
+		numObsBeforeCollect = 4;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		highLinePrefab.SetColors(usedRail,usedRail);
+
 	}
 }
