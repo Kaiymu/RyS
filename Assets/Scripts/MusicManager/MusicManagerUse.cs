@@ -4,21 +4,27 @@ using System.Collections;
 public class MusicManagerUse : MonoBehaviour {
 
 	private float _lengthMusic = 0;
+	private AudioSource AudioSourceMusic;
+
+	void Start()
+	{
+		MusicManager.MusicInfo[] music = MusicManager.Instance.GetMusicList();
+		AudioSourceMusic = MusicManager.Instance.AudioSource;
+	}
 
     void OnGUI()
     {
-        MusicManager.MusicInfo[] music = MusicManager.Instance.GetMusicList();
-
-        if (MusicManager.Instance.AudioSource.isPlaying)
+	
+		if (AudioSourceMusic.isPlaying)
         {
             if (PauseGame.pause) 
-                MusicManager.Instance.AudioSource.Pause();
+				AudioSourceMusic.Pause();
         }
-        else if (MusicManager.Instance.AudioSource.clip!= null && MusicManager.Instance.AudioSource.clip.isReadyToPlay)
+		else if (AudioSourceMusic.clip!= null && AudioSourceMusic.clip.isReadyToPlay)
         {
 			if (!PauseGame.pause)
 			{
-                MusicManager.Instance.AudioSource.Play();
+				AudioSourceMusic.Play();
 			}
         }
     }
