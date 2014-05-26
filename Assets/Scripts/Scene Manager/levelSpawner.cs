@@ -21,9 +21,9 @@ public class levelSpawner : MonoBehaviour {
 	public Color usedRail;
 	// Use this for initialization
 	void Start () {
-		Instantiate(this.midLinePrefab, new Vector3(0,0,0), this.transform.rotation);
+		/*Instantiate(this.midLinePrefab, new Vector3(0,0,0), this.transform.rotation);
 		Instantiate(this.highLinePrefab, new Vector3(0,0,0), this.transform.rotation);
-		Instantiate(this.botLinePrefab, new Vector3(0,0,0), this.transform.rotation);
+		Instantiate(this.botLinePrefab, new Vector3(0,0,0), this.transform.rotation);*/
 
 		Instantiate(this.midSpawnerPrefab, new Vector3(halfScreenSize,0,0), this.transform.rotation);
 		Instantiate(this.highSpawnerPrefab, new Vector3(halfScreenSize,rangeBetweenRails,0), this.transform.rotation);
@@ -36,7 +36,7 @@ public class levelSpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		highLinePrefab.SetColors(usedRail,usedRail);
+		//highLinePrefab.SetColors(usedRail,usedRail);
 
 	}
 }
