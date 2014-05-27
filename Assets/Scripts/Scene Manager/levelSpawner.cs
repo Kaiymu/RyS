@@ -43,8 +43,8 @@ public class levelSpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		if(bassCount == 1)
+		Debug.Log(bassCount);
+		if(bassCount != 0)
 		{
 			bassCount = 0;
 			if(ActiveRailNum < 2)
