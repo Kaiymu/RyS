@@ -1,14 +1,9 @@
 RyS
 ===
 
-<<<<<<< HEAD
 Musical game made with Unity by 2 students (Gabin Ferellec, Thomas Fontaine)
 
 - Run your Sound is a musical game, 2D, runner game, where you can import your musics and playlist to generate dinamicly your levels, and play them. 
-- You can use your microphone to improve the experience. 
-=======
-Musical game made with UNITY by 2 Isart Digital Students. 
-
 
     //// R.Y.S : Run your sound ////
     
@@ -18,7 +13,7 @@ Musical game made with UNITY by 2 Isart Digital Students.
     Z or Up arrow to move up
     S or Down arrow to move down
     SPACE to shoot, when your energy bar is full
-    Pause is "P", getting back to game is M.
+    Pause is "P", getting back to game is "M"
     When you pull the game, you have a /music folder, with 2 musis in it. If you want to play with your sounds, you have 
     to put your .ogg music on this folder. 
   
@@ -33,4 +28,3 @@ Musical game made with UNITY by 2 Isart Digital Students.
     
     Have fun and hope to get your fedbacks.
     
->>>>>>> 7932fe32ba204a97941730e92debb676c4f027b0
