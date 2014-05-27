@@ -16,7 +16,7 @@ public class CreateInstance : MonoBehaviour {
 			//MusicManager.Instance.StartMusic(musicName.fullPath);
 			if(_boutonMusic != null)
 			{
-				posY -= 0.3f;
+				posY -= 0.15f;
 				GameObject o = Instantiate(_boutonMusic, new Vector3(1.5f, posY, 0f), Quaternion.identity) as GameObject;
 				o.GetComponentInChildren<MusicPlay>().nameMusic = musicName.name;
 				o.GetComponentInChildren<MusicPlay>().namePath  = musicName.fullPath;

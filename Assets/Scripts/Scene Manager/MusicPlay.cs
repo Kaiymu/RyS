@@ -14,6 +14,7 @@ public class MusicPlay : MonoBehaviour {
 	private MusicManager.MusicInfo[] _music;
 	private MusicManager _musicPaused;
 	private GameObject _parentGameobject;
+	private GameObject _SelectASound;
 
 	void Awake()
 	{
@@ -22,8 +23,10 @@ public class MusicPlay : MonoBehaviour {
 	
 	void Start()
 	{ 	
-		if(GameObject.FindGameObjectsWithTag("MusicBouton").Length >= 6)
-			lengthArrayButtons = 5;
+
+		_SelectASound = GameObject.Find("SelectASound");
+		if(GameObject.FindGameObjectsWithTag("MusicBouton").Length >= 9)
+			lengthArrayButtons = 8;
 		else
 			lengthArrayButtons = disablesOtherButon.Length;
 
@@ -34,8 +37,10 @@ public class MusicPlay : MonoBehaviour {
 
 	void playMusic()
 	{
+
 		Destroy(_parentGameobject);
 		MusicManager.Instance.StartMusic(namePath);
+		_SelectASound.SetActive(false);
 		lengthArrayButtons--;
 
 		for(int i = 0; i < disablesOtherButon.Length; i++)
