@@ -23,7 +23,6 @@ public class MusicPlay : MonoBehaviour {
 	{ 
 		disablesOtherButon = GameObject.FindGameObjectsWithTag("MusicBouton"); 
 		this.transform.GetChild(1).GetComponent<UILabel>().text = nameMusic;
-
 		_parentGameobject = this.transform.parent.gameObject;
 
 	}
