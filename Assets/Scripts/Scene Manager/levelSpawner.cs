@@ -43,7 +43,7 @@ public class levelSpawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(bassCount);
+
 		if(bassCount != 0)
 		{
 			bassCount = 0;
