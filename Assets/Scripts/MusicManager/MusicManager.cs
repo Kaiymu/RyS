@@ -71,6 +71,5 @@ public class MusicManager : MonoBehaviour {
         this.AudioSource.clip = www.GetAudioClip(false, true);
         while (this.AudioSource.clip.isReadyToPlay == false) yield return null;
         this.AudioSource.Play();
-
-    }
+    }	
 }
