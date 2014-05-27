@@ -5,7 +5,6 @@ public class EmitExplosion : MonoBehaviour {
 
 	public GameObject particlesDetonator;
 	private Detonator _particlesDetonator;
-	private int _index;
 
 	void Awake()
 	{
