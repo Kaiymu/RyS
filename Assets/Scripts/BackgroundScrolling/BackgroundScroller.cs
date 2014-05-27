@@ -14,7 +14,7 @@ public class BackgroundScroller : MonoBehaviour {
 		if(!PauseGame.pause)
 		{
 			_pos += speed;
-			if(_pos > 1.0f)
+			if(_pos > 1f)
 				_pos -= 1.0f;
 
 			renderer.material.mainTextureOffset = new Vector2(_pos, 0);
