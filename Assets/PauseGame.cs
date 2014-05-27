@@ -15,7 +15,7 @@ public class PauseGame : MonoBehaviour {
 			Time.timeScale = 0;
 			pause = true;
 		}
-		if(Input.GetKeyDown("v")){
+		if(Input.GetKeyDown("m")){
 			Time.timeScale = 1;
 			pause = false;
 		}

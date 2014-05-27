@@ -26,9 +26,14 @@ public class ShipCollide : MonoBehaviour {
 
 		if(col.tag == "BlockSpawn")
 		{
-			_combo = 0;
-			col.GetComponent<EmitExplosion>().exploseMe();
-			_scoreGive.score -= 600;
+			if(!col.gameObject.GetComponent<blockMove>().isDead)
+				Debug.Log ("Already dead");
+			else
+			{
+				_combo = 0;
+				col.GetComponent<EmitExplosion>().exploseMe();
+				_scoreGive.score -= 600;
+			}
 		}
 	}
 

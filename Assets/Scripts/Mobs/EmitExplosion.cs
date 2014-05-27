@@ -14,7 +14,8 @@ public class EmitExplosion : MonoBehaviour {
 	public void exploseMe()
 	{
 		_particlesDetonator.Explode();
-		ParticleSystem[] allChildren = GetComponentsInChildren<ParticleSystem>();
+		particlesDetonator.transform.parent.GetComponent<blockMove>().isDead = true;
+			ParticleSystem[] allChildren = GetComponentsInChildren<ParticleSystem>();
 		foreach (ParticleSystem childParticles in allChildren) {
 			Destroy(childParticles);
 		}
