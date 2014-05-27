@@ -7,19 +7,17 @@ public class ScoreManager : MonoBehaviour {
 	private GUIText _GuiScore;
 	private float _scoreIncrease = 0f;
 
+	public static float giveScoreToAll;
+
 	public bool particleBadOnce, particleGoodOnce = false;
 
 	public GameObject goodEmiter, badEmiter;
 	private Detonator _goodEmiter, _badEmiter;
-
-
-	void Awake()
-	{	
-		_GuiScore = GetComponent<GUIText>();
-	}
+	private UILabel _displayScore;
 
 	void Start()
 	{
+		_displayScore = this.GetComponent<UILabel>();
 		_goodEmiter = goodEmiter.GetComponent<Detonator>();
 		_badEmiter  = badEmiter.GetComponent<Detonator>();
 	}
@@ -40,8 +38,6 @@ public class ScoreManager : MonoBehaviour {
 
 	void Update()
 	{
-		_GuiScore.text = "Your score is" + " : " + _score;
-			
 		if(particleGoodOnce)
 		{
 			_goodEmiter.Explode();
@@ -52,7 +48,9 @@ public class ScoreManager : MonoBehaviour {
 			_badEmiter.Explode();
 			particleBadOnce = false;
 		}
-			
+
+		_displayScore.text = "Your score : " + _score;
+		giveScoreToAll = _score;			
 	}
 	
 

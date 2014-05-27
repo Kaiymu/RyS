@@ -5,6 +5,8 @@ public class shipMove : MonoBehaviour {
 
 	public float moveSpeed;
 	public GameObject playerBullet;
+	public Material notFullBar;
+	public Material fullBar;
 	public GameObject ammoBar;
 	private int currentRail;
 	public float rangeBetweenRails; 
@@ -33,6 +35,13 @@ public class shipMove : MonoBehaviour {
 		if(this.currentRail == levelSpawner.ActiveRailNum)
 		{
 			this.loadWeapon();
+		}
+		if(this.ammo == this.maxAmmo)
+		{
+			ammoBar.renderer.material = this.fullBar;
+		}
+		else{
+			ammoBar.renderer.material = this.notFullBar;
 		}
 		if(!PauseGame.pause)
 		{

@@ -31,7 +31,8 @@ public class DetectMusic : MonoBehaviour {
 
 	void displayUI()
 	{	
-		if(MusicPlay.lengthArrayButtons <= 1)
+		Debug.Log (MusicPlay.lengthArrayButtons);
+		if(MusicPlay.lengthArrayButtons >= 1)
 		{
 			for(int i = 0; i < MusicPlay.disablesOtherButon.Length; i++)
 			{
@@ -41,7 +42,7 @@ public class DetectMusic : MonoBehaviour {
 		}
 
 		if(MusicPlay.lengthArrayButtons == 0)
-			Debug.Log ("Fin du game");
+			Application.LoadLevel("endScene");
 	}
 	
 	

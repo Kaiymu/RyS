@@ -15,23 +15,28 @@ public class MusicPlay : MonoBehaviour {
 	private MusicManager _musicPaused;
 	private GameObject _parentGameobject;
 	private GameObject _SelectASound;
+	private GameObject _SelectAScore;
 
 	void Awake()
 	{
-		disablesOtherButon = new GameObject[5]; 
+		disablesOtherButon = new GameObject[8]; 
 	}
 	
 	void Start()
 	{ 	
-
 		_SelectASound = GameObject.Find("SelectASound");
+		_SelectAScore = GameObject.Find("SelectAScore");
+		if(_SelectAScore != null)
+			_SelectAScore.SetActive(false);
+	
+		disablesOtherButon = GameObject.FindGameObjectsWithTag("MusicBouton"); 
+	
 		if(GameObject.FindGameObjectsWithTag("MusicBouton").Length >= 9)
 			lengthArrayButtons = 8;
 		else
 			lengthArrayButtons = disablesOtherButon.Length;
-
-		disablesOtherButon = GameObject.FindGameObjectsWithTag("MusicBouton"); 
-		this.transform.GetChild(1).GetComponent<UILabel>().text = nameMusic;
+		
+		this.transform.GetChild(0).GetComponent<UILabel>().text = nameMusic;
 		_parentGameobject = this.transform.parent.gameObject;
 	}
 
@@ -41,6 +46,8 @@ public class MusicPlay : MonoBehaviour {
 		Destroy(_parentGameobject);
 		MusicManager.Instance.StartMusic(namePath);
 		_SelectASound.SetActive(false);
+		if(_SelectAScore != null)
+			_SelectAScore.SetActive(true);
 		lengthArrayButtons--;
 
 		for(int i = 0; i < disablesOtherButon.Length; i++)
