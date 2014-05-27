@@ -21,9 +21,13 @@ public class MusicPlay : MonoBehaviour {
 	}
 	
 	void Start()
-	{ 
+	{ 	
+		if(GameObject.FindGameObjectsWithTag("MusicBouton").Length >= 6)
+			lengthArrayButtons = 5;
+		else
+			lengthArrayButtons = disablesOtherButon.Length;
+
 		disablesOtherButon = GameObject.FindGameObjectsWithTag("MusicBouton"); 
-		lengthArrayButtons = disablesOtherButon.Length;
 		this.transform.GetChild(1).GetComponent<UILabel>().text = nameMusic;
 		_parentGameobject = this.transform.parent.gameObject;
 	}

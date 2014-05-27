@@ -18,7 +18,6 @@ public class BulletCollider : MonoBehaviour {
 		if(col.tag == "BlockSpawn")
 		{
 			_numberHitted++;
-			Destroy(col.gameObject);
 			col.GetComponent<EmitExplosion>().exploseMe();
 			_scoreGive.score += (_numberHitted * 100);
 
