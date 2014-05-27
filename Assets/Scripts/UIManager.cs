@@ -17,4 +17,7 @@ public class UIManager : MonoBehaviour {
 
 		Application.LoadLevel("test");
 	}
+	void GoToMenu() {
+		Application.LoadLevel("Menu");
+	}
 }
