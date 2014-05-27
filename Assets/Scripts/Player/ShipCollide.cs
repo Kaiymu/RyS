@@ -22,17 +22,19 @@ public class ShipCollide : MonoBehaviour {
 			Destroy(col.gameObject);
 			_scoreGive.score += 50 * _combo;
 			_particleExplodesSelf.Play();
+			_scoreGive.particleGoodOnce = true;
 		}
 
 		if(col.tag == "BlockSpawn")
 		{
-			if(!col.gameObject.GetComponent<blockMove>().isDead)
+			if(col.gameObject.GetComponent<blockMove>().isDead)
 				Debug.Log ("Already dead");
 			else
 			{
 				_combo = 0;
 				col.GetComponent<EmitExplosion>().exploseMe();
 				_scoreGive.score -= 600;
+				_scoreGive.particleBadOnce = true;
 			}
 		}
 	}
