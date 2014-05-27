@@ -3,13 +3,25 @@ using System.Collections;
 
 public class BulletCollider : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+	private GameObject _ScoreManager;
+	private ScoreManager _scoreGive;
+
+	private int _numberHitted = 0;
+
+	void Start()
+	{
+		_ScoreManager = GameObject.FindGameObjectWithTag("Score");
+		_scoreGive = _ScoreManager.GetComponent<ScoreManager>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void OnTriggerEnter(Collider col) {
+		if(col.tag == "BlockSpawn")
+		{
+			_numberHitted++;
+			Destroy(col.gameObject);
+			col.GetComponent<EmitExplosion>().exploseMe();
+			_scoreGive.score += (_numberHitted * 100);
+
+		}
 	}
 }

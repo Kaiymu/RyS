@@ -23,9 +23,18 @@ public class DetectMusic : MonoBehaviour {
 			_coutdown -= Time.deltaTime;
 			if(_coutdown <= 0)
 			{
-				Debug.Log ("pas de son jouer depuis 5 secondes");
+				displayUI();
 				_gameLaunched = false;
 			}
+		}
+	}
+
+	void displayUI()
+	{	
+		for(int i = 0; i < MusicPlay.disablesOtherButon.Length; i++)
+		{
+			if(MusicPlay.disablesOtherButon[i] != null)
+				MusicPlay.disablesOtherButon[i].SetActive(true);
 		}
 	}
 	

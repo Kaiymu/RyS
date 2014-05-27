@@ -34,7 +34,8 @@ public class MusicPlay : MonoBehaviour {
 
 		for(int i = 0; i < disablesOtherButon.Length; i++)
 		{
-			disablesOtherButon[i].SetActive(false);
+			if(MusicPlay.disablesOtherButon[i] != null)
+				disablesOtherButon[i].SetActive(false);
 		}
 	}
 

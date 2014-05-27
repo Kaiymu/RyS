@@ -4,9 +4,11 @@ using System.Collections;
 public class ShipCollide : MonoBehaviour {
 
 	public GameObject ScoreManager;
+
 	private ScoreManager _scoreGive;
 	private ParticleSystem _particleExplodesSelf;
-	
+	private int _combo;
+
 	void Start()
 	{
 		_particleExplodesSelf = this.transform.GetChild(0).GetComponent<ParticleSystem>();
@@ -16,15 +18,17 @@ public class ShipCollide : MonoBehaviour {
 	void OnTriggerEnter(Collider col) {
 		if(col.tag == "Collectible")
 		{
-			//col.GetComponent<EmitExplosion>().Play();
+			_combo++;
 			Destroy(col.gameObject);
-			_scoreGive.score += 10;
+			_scoreGive.score += 50 * _combo;
 			_particleExplodesSelf.Play();
 		}
+
 		if(col.tag == "BlockSpawn")
 		{
+			_combo = 0;
 			col.GetComponent<EmitExplosion>().exploseMe();
-			_scoreGive.score -= 15;
+			_scoreGive.score -= 600;
 		}
 	}
 

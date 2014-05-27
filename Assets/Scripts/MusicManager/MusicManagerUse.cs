@@ -29,12 +29,4 @@ public class MusicManagerUse : MonoBehaviour {
         }
     }
 
-	void displayUI()
-	{	
-		for(int i = 0; i < MusicPlay.disablesOtherButon.Length; i++)
-		{
-			MusicPlay.disablesOtherButon[i].SetActive(true);
-		}
-	}
-
 }
