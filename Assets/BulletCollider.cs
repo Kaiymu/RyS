@@ -5,6 +5,7 @@ public class BulletCollider : MonoBehaviour {
 
 	private GameObject _ScoreManager;
 	private ScoreManager _scoreGive;
+	private ScoreManager _goodEmiterScore;
 
 	private int _numberHitted = 0;
 
@@ -20,6 +21,8 @@ public class BulletCollider : MonoBehaviour {
 			_numberHitted++;
 			col.GetComponent<EmitExplosion>().exploseMe();
 			_scoreGive.score += (_numberHitted * 100);
+			_goodEmiterScore = _ScoreManager.GetComponent<ScoreManager>();
+			_goodEmiterScore.particleGoodOnce = true;
 
 		}
 	}
