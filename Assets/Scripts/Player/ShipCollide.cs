@@ -16,7 +16,7 @@ public class ShipCollide : MonoBehaviour {
 	void OnTriggerEnter(Collider col) {
 		if(col.tag == "Collectible")
 		{
-			//col.GetComponent<EmitExplosion>().exploseMe();
+			//col.GetComponent<EmitExplosion>().Play();
 			Destroy(col.gameObject);
 			_scoreGive.score += 10;
 			_particleExplodesSelf.Play();
