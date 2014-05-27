@@ -8,6 +8,7 @@ public class MusicPlay : MonoBehaviour {
 	public string namePath  = string.Empty;
 
 	public static GameObject[] disablesOtherButon;
+	public static int lengthArrayButtons;
 
 	private UILabel _parentsText;
 	private MusicManager.MusicInfo[] _music;
@@ -16,21 +17,22 @@ public class MusicPlay : MonoBehaviour {
 
 	void Awake()
 	{
-		disablesOtherButon = new GameObject[10]; 
+		disablesOtherButon = new GameObject[5]; 
 	}
 	
 	void Start()
 	{ 
 		disablesOtherButon = GameObject.FindGameObjectsWithTag("MusicBouton"); 
+		lengthArrayButtons = disablesOtherButon.Length;
 		this.transform.GetChild(1).GetComponent<UILabel>().text = nameMusic;
 		_parentGameobject = this.transform.parent.gameObject;
-
 	}
 
 	void playMusic()
 	{
 		Destroy(_parentGameobject);
 		MusicManager.Instance.StartMusic(namePath);
+		lengthArrayButtons--;
 
 		for(int i = 0; i < disablesOtherButon.Length; i++)
 		{

@@ -31,11 +31,17 @@ public class DetectMusic : MonoBehaviour {
 
 	void displayUI()
 	{	
-		for(int i = 0; i < MusicPlay.disablesOtherButon.Length; i++)
+		if(MusicPlay.lengthArrayButtons <= 1)
 		{
-			if(MusicPlay.disablesOtherButon[i] != null)
-				MusicPlay.disablesOtherButon[i].SetActive(true);
+			for(int i = 0; i < MusicPlay.disablesOtherButon.Length; i++)
+			{
+				if(MusicPlay.disablesOtherButon[i] != null)
+					MusicPlay.disablesOtherButon[i].SetActive(true);
+			}
 		}
+
+		if(MusicPlay.lengthArrayButtons == 0)
+			Debug.Log ("Fin du game");
 	}
 	
 	
