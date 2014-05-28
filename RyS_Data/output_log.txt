@@ -15,18 +15,7 @@ Platform assembly: C:\Users\user\Documents\RyS\RyS_Data\Managed\Assembly-UnitySc
 Loading C:\Users\user\Documents\RyS\RyS_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
 Platform assembly: C:\Users\user\Documents\RyS\RyS_Data\Managed\VisualizerStudio.dll (this message is harmless)
 Loading C:\Users\user\Documents\RyS\RyS_Data\Managed\VisualizerStudio.dll into Unity Child Domain
-- Completed reload, in  0.046 seconds
+- Completed reload, in  0.223 seconds
 desktop: 1920x1080 59Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-Platform assembly: C:\Users\user\Documents\RyS\RyS_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 0.278437 ms
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 532.
-Total: 0.888413 ms (FindLiveObjects: 0.041944 ms CreateObjectMapping: 0.013832 ms MarkObjects: 0.222661 ms  DeleteObjects: 0.008478 ms)
-
-A VisManager should have an Audio Source assigned to it so it only listens to the specified music. This manager will now default to using the static Audio Listener, which contains ALL audio playing in the game.  This Audio Listener does not work near as well as listening directly to an Audio Source, so it is NOT recommended.
- 
-(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
-
